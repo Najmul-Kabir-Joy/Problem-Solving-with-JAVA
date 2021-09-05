@@ -1,24 +1,31 @@
 import java.util.Scanner;
 
-public class uri_1186 {
+public class uri_1187 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.next();
-        double[][] array = new double[12][12];
         double total = 0.0;
         double count = 0.0;
-        // taking input in array and calculating total
-        // increasing count for taken input
+        int x = 0;
+        double[][] array = new double[12][12];
+        // taking input
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
-                array[i][j] = scanner.nextDouble();
-                if (j > array.length - i - 1) {
-                    total += array[i][j];
-                    count++;
-                }
+                array[i][j] = x;
+                x++;
             }
+            x = 0;
         }
-        // checking input and providing final result
+        // iterating for result
+        for (int i = 1; i < array.length - i; i++) {
+            for (int j = i; j < array.length - i; j++) {
+                System.out.print(array[i][j] + "-");
+                total += array[i][j];
+                count++;
+            }
+            System.out.println();
+        }
+        // providing final output
         if (s.equals("S")) {
             System.out.println(String.format("%.1f", total));
         } else if (s.equals("M")) {
